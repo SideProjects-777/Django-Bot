@@ -33,5 +33,5 @@ class Form(models.Model):
     user = models.TextField(max_length=250, null=True)
 
     def snippet(self):
-        return self.nextDayPlan[:10]+'...'
+        return self.next_day_plan[:10]+'...'
 
