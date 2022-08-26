@@ -27,7 +27,7 @@ def saveForm(request):
     user = request.POST.get('fullname')
     data = Form(user=user,market=market,notes=notes,next_day_plan=next_day_plan,daily_progress=daily_progress,completeness=completeness,CX_status=CX_status,site_ID=site_ID, crew_status=crew_status)
     data.save()
-    response = redirect('/load/')
+    response = redirect('/form/thanks/')
     return response
 
 
