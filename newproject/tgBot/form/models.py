@@ -17,23 +17,20 @@ CX = (
 )
 
 class Form(models.Model):
-    currDay = models.DateField(auto_now=True)
-    crewStatus = models.CharField(max_length=9,
+    work_date = models.DateField(auto_now=True)
+    crew_status = models.CharField(max_length=9,
                   choices=CREW,
                   default="WORK")
-    siteID = models.TextField(max_length=10)
-    CXstatus = models.CharField(max_length=9,
+    site_ID = models.TextField(max_length=10)
+    CX_status = models.CharField(max_length=9,
                   choices=CX,
                   default="CXS")
     completeness =models.TextField(max_length=100)
-    dailyProgress = models.TextField(max_length=250)
-    nextDayPlan = models.TextField(max_length=250)
+    daily_progress = models.TextField(max_length=250)
+    next_day_plan = models.TextField(max_length=250)
     notes = models.TextField(max_length=250)
     market = models.TextField(max_length=250)
     user = models.TextField(max_length=250, null=True)
-
-    def __str__(self):
-        return self.currDay.strftime("%d-%m-%Y") +'  /   ' + self.user 
 
     def snippet(self):
         return self.nextDayPlan[:10]+'...'
