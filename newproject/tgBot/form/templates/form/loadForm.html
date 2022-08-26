@@ -10,13 +10,13 @@
 <h3 class="title">Submit daily progress</h3>
 
 <div class="container">
-  <form method="post" >
+  <form method="post" action="{% url 'form:save'%}" >
     {% csrf_token %} 
     <label for="fname">Full Name</label>
     <input type="text" id="fname" name="fullname" placeholder="Your fullname..">
 
     <label for="crewstatus">Crew Status</label>
-    <select id="crewstatus" name="crew">
+    <select id="crewstatus" name="crewstatus">
       <option value="australia">Australia</option>
       <option value="canada">Canada</option>
       <option value="usa">USA</option>
@@ -26,7 +26,7 @@
     <input type="text" id="site" name="siteid" placeholder="Site ID..">
 
     <label for="cxstatus">CX Status</label>
-    <select id="cxstatus" name="status">
+    <select id="cxstatus" name="cxstatus">
       <option value="australia">Australia</option>
       <option value="canada">Canada</option>
       <option value="usa">USA</option>

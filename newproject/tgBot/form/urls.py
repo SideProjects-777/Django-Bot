@@ -1,7 +1,10 @@
 from django.urls import path
 from . import views
 
+app_name = 'form'
+
 urlpatterns = [
-    path('submit/', views.loadForm),
-    path('view/', views.viewResults)
+    path('load/', views.loadForm, name="load"),
+    path('view/', views.viewResults, name="view"),
+    path('save/', views.saveForm, name="save")
 ]
