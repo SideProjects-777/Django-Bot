@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Submit daily progress</title>
+<link rel="stylesheet" href="/static/css/form.css">
+</head>
+<body>
+
+<h3 class="title">Submit daily progress</h3>
+
+<div class="container">
+  <form method="post" >
+    {% csrf_token %} 
+    <label for="fname">Full Name</label>
+    <input type="text" id="fname" name="fullname" placeholder="Your fullname..">
+
+    <label for="crewstatus">Crew Status</label>
+    <select id="crewstatus" name="crew">
+      <option value="australia">Australia</option>
+      <option value="canada">Canada</option>
+      <option value="usa">USA</option>
+    </select>
+
+    <label for="site">Site ID</label>
+    <input type="text" id="site" name="siteid" placeholder="Site ID..">
+
+    <label for="cxstatus">CX Status</label>
+    <select id="cxstatus" name="status">
+      <option value="australia">Australia</option>
+      <option value="canada">Canada</option>
+      <option value="usa">USA</option>
+    </select>
+
+    <label for="completeness">Completeness</label>
+    <input type="number" id="completeness" name="completeness"  min="0" max="100" placeholder="Percentage (between 1 and 100):">
+
+    <label for="daily">Daily Progress</label>
+    <textarea id="daily" name="daily" placeholder="Your daily achievement.." style="height:200px"></textarea>
+
+    <label for="nextDay">Next Day Plan</label>
+    <textarea id="nextDay" name="nextDay" placeholder="Next Day Plan" style="height:200px"></textarea>
+
+    <label for="notes">Personal Notes</label>
+    <textarea id="notes" name="notes" placeholder="Notes" style="height:200px"></textarea>
+
+    <label for="market">Market</label>
+    <input type="text" id="market" name="market" placeholder="Market">
+
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+</body>
+</html>
