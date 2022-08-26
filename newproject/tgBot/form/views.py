@@ -12,5 +12,10 @@ def viewResults(request):
     results = Form.objects.all().order_by('currDay')
     return render(request, 'form/viewResults.html', {'results':results} )
 
-def dummy(request):
-    return render(request, 'form/dummy.html' )
+def deleteRow(request):
+    results = Form.objects.all().order_by('currDay')
+    return render(request, 'form/viewResults.html', {'results':results} )
+
+def editRow(request):
+    results = Form.objects.all().order_by('currDay')
+    return render(request, 'form/viewResults.html', {'results':results} )
