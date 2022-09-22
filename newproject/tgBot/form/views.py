@@ -11,7 +11,7 @@ def loadForm(request):
     return render(request, 'form/loadForm.html',{'form':form} )
 
 def viewResults(request):
-    results = Form.objects.all().order_by('currDay')
+    results = Form.objects.all().order_by('work_date')
     return render(request, 'form/viewResults.html', {'results':results} )
 
 def saveForm(request):
